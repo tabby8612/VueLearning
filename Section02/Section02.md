@@ -166,11 +166,19 @@ If you want to **prevent Vue from recalculating** values again and again, you ca
 <p v-once>Result: {{ counter }}</p>
 ```
 
-## Two way of binding - `v-bind`
+## Changing Field Dynamically - `v-bind`
 
 You can bind any component to change field dynamically using `v-bind` directive
 
-![two-way binding](./screenshots/v-bind.png)
+![v-bind](./screenshots/v-bind.png)
+
+## Combining `v-bind` and `v-on` with `v-model`
+
+t-model is syntax sugar for
+* reading value
+* updating state when input change
+
+![two-way binding](./screenshots/v-model.png)
 
 
 ## Computed Properties
@@ -195,10 +203,91 @@ Watchers work like `useEffect()` and they must be bound to one of the data prope
 
 You can use `@` as a shorthand for `v-on` and `:` as a shorthand for `v-bind`
 
+# Dynamic Styling
+
+By binding `class` or `style` attribues we can do dynamic styling. Vue JS provides object syntax in which **object keys are class names** and values are `true/false`
+
+![dynamic styling](./screenshots/dynamic_styling.png)
 
 
+## Assignment 3
 
+``` html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Styling</h1>
+    </header>
+    <section id="assignment">
+      <!-- 1) Fetch the user input and use it as a CSS class -->
+      <!-- The entered class should be added to the below paragraph -->
+      <input type="text" @keyup.enter="updateClasses" />
+      <!-- (available classes: "user1", "user2") -->
+      <p :class="[userClasses, toggle]">
+        Style me!
+      </p>
+      <button @click="togglePara">Toggle Paragraph</button>
+      <!-- 2) Use the "visible" and "hidden" classes to show/ hide the above paragraph -->
+      <!-- Clicking the button should toggle between the two options -->
 
+      <!-- 3) Add dynamic inline styling to the below paragraph and let the user enter a background-color -->
+      <input type="text" @input="changeBgColor" />
+      <p :style="{backgroundColor: bgColor}">Style me inline!</p>
+    </section>
+  </body>
+</html>
+
+```
+
+``` javascript
+Vue.createApp({
+  data: () => {
+    return {
+      userClasses: "",
+      isDisplay: true,
+      bgColor: "white",
+    };
+  },
+
+  computed: {
+    toggle() {
+      return this.isDisplay ? "visible" : "hidden";
+    },
+  },
+
+  methods: {
+    updateClasses(event) {
+      this.userClasses = event.target.value;
+    },
+
+    togglePara() {
+      this.isDisplay = !this.isDisplay;
+    },
+
+    changeBgColor(event) {
+      this.bgColor = event.target.value;
+    },
+  },
+}).mount("#assignment");
+
+```
+
+# Summary
+
+![summary](./screenshots/summary.png)
 
 
 
