@@ -57,3 +57,7 @@ Vuex merge all properties together, but name clash can occur and for this reason
 ### Namespace Modules
 
 ![namespace modules](./screenshots/namespace_modules.png)
+
+# Section 15 - Summary
+
+![getters, mutators, actions](./screenshots/mutators,%20actions,%20and%20setters.png)
