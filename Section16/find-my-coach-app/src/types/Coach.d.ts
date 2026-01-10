@@ -4,4 +4,5 @@ type Coach = {
   rate: string
   // services: ('frontend' | 'backend' | 'career')[]
   services: string[]
+  description: string
 }

@@ -3,15 +3,29 @@
     <h1 class="text-2xl font-bold">Find Your Coach</h1>
     <form class="flex gap-5 mt-3" @change="filter">
       <div class="flex gap-2 justify-center items-center text-lg font-semibold">
-        <input type="checkbox" name="frontend" id="frontend" class="size-3.5" ref="frontendCkb" />
+        <input
+          type="checkbox"
+          name="frontend"
+          id="frontend"
+          class="size-3.5"
+          ref="frontendCkb"
+          checked
+        />
         <label for="frontend">Frontend</label>
       </div>
       <div class="flex gap-2 justify-center items-center text-lg font-semibold">
-        <input type="checkbox" name="backend" id="backend" class="size-3.5" ref="backendCkb" />
+        <input
+          type="checkbox"
+          name="backend"
+          id="backend"
+          class="size-3.5"
+          ref="backendCkb"
+          checked
+        />
         <label for="backend">Backend</label>
       </div>
       <div class="flex gap-2 justify-center items-center text-lg font-semibold">
-        <input type="checkbox" name="career" id="career" class="size-3.5" ref="careerCkb" />
+        <input type="checkbox" name="career" id="career" class="size-3.5" ref="careerCkb" checked />
         <label for="career">Career</label>
       </div>
     </form>
@@ -38,6 +52,8 @@ export default defineComponent({
       if (frontendChk) filters.push('frontend')
       if (backendCkb) filters.push('backend')
       if (careerCkb) filters.push('career')
+
+      console.log(filters)
 
       this.$store.dispatch('filterCoaches', filters)
     },

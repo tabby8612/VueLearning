@@ -6,8 +6,11 @@
       <Tag v-for="service in services" :type="service" />
     </ul>
     <div class="flex justify-end items-center gap-5">
-      <Button mode="ghost">Contact</Button>
-      <Button mode="flat" :id="id">View Details</Button>
+      <RouterLink :to="contactCoach"><Button mode="ghost">Contact</Button></RouterLink>
+
+      <RouterLink :to="CoachDetail">
+        <Button mode="flat" :id="id">View Details</Button>
+      </RouterLink>
     </div>
   </section>
 </template>
@@ -21,6 +24,16 @@ export default defineComponent({
   components: {
     Tag,
     Button,
+  },
+
+  computed: {
+    contactCoach() {
+      return '/coach/' + this.id + '/contact'
+    },
+
+    CoachDetail() {
+      return '/coach/' + this.id
+    },
   },
   props: {
     id: { type: String, required: true },
