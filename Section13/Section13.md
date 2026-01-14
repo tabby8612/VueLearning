@@ -4,11 +4,13 @@
 
 There are six steps you need to follow to create routes.
 
+> below correct key is `history: createWebHistory()`
+
 ![Vue Routes](./screenshots/vue-route.png)
 
 ## Programmic and Dynamic Routes:
 
-**Programmic routes** are those route that we can take user to another page programmicly.
+**Programmic routes** are those route that we can take user to another page programmicly like `this.$router.push('<route>')` or `this.$router.replace('<route>')` for no browser back option .
 
 **Dynamic routes** are those routes in which we send `parameter` with route.
 

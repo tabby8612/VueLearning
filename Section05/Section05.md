@@ -12,7 +12,7 @@ Vue brings **reactivity** to its functionality using `Proxy` object.
 
 We can definately **have multiple apps** in a single html page and from `template` property we can **pass html content to render**.
 
-## `Ref` to Access Element Properties
+## Template `Ref` to Access Element Properties
 
 ![ref](./screenshots/ref.png)
 

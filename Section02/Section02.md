@@ -174,7 +174,7 @@ You can bind any component to change field dynamically using `v-bind` directive
 
 ## Combining `v-bind` and `v-on` with `v-model`
 
-t-model is syntax sugar for
+v-model is syntax sugar for
 * reading value
 * updating state when input change
 

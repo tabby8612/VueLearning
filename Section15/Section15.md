@@ -4,7 +4,7 @@
 
 It is an alternative to provide/inject because using provide and inject can make possible for every component to read data.
 
-> Chatgpa suggest to skip Vuex and study Pinia
+> It is suggested to skip Vuex and study Pinia
 
 ![Why VUEX](./screenshots/whyUseVuex.png)
 
